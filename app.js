@@ -20,6 +20,7 @@ const mongoStore = connectMongo(expressSession);
 //ROUTES
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -78,13 +79,7 @@ app.get('/private', routeGuard, (req, res) => {
   res.render('private');
 });
 
-app.get('/profile', routeGuard, (req, res) => {
-  res.render('profile');
-});
-
-app.get('/profile/edit', routeGuard, (req, res) => {
-  res.render('edit');
-});
+app.use('/profile', profileRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

@@ -1,0 +1,11 @@
+{{#if user}}
+<h1>{{ user.username }}'s Profile</h1>
+<h3>User ID</h3><br>
+<label>{{ user._id }}</label><br><br>
+<h3>Username:</h3>
+<label>{{ user.username }}</label><br><br>
+<h3>Name:</h3>
+<label>{{ user.name }}</label><br><br>
+
+ <a href="profile/edit"> Edit Profile</a> 
+{{/if}}

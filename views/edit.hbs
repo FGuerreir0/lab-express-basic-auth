@@ -1,0 +1,10 @@
+
+
+{{#if user}}
+<h1>Edit {{user.username}}'s Profile</h1>
+<form action="" method="POST">
+  <label for="name-input">Name</label>
+  <input id="name-input" type="string" name="name" placeholder="Name" value="{{user.name}}" required>
+  <button>Edit</button>
+</form>
+{{/if}}
